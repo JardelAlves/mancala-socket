@@ -1,1 +1,1 @@
-# mancala-socket
+# Mancala - Socket
