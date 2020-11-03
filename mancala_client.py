@@ -3,11 +3,12 @@ import select
 import errno
 import sys
 from threading import Thread
+import mancala_game as game
 
 HEADER_LENGTH = 10
 
 if len(sys.argv) != 3:
-    print("Uso correto: python cliente.py <endereço de ip> <número da porta>")
+    print("Uso correto: python client.py <endereço de ip> <número da porta>")
     exit()
 
 IP: str = sys.argv[1]
@@ -78,3 +79,5 @@ threadSendMessage.start()
 
 threadReceiveMessage = Thread(target=recieveMessage)
 threadReceiveMessage.start()
+
+game.startGame()

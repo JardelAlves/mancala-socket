@@ -5,7 +5,7 @@ import sys
 HEADER_LENGTH = 10
 
 if len(sys.argv) != 3:
-    print("uso correto: python servidor.py <endereço ip> <numero da porta>")
+    print("Uso correto: python server.py <endereço de ip> <número da porta>")
     exit()
 
 IP: str = sys.argv[1]
@@ -20,7 +20,7 @@ server_socket.listen()
 sockets_list = [server_socket]
 clients = {}
 
-print(f'Listening for connections on {IP}:{PORT}...')
+print(f'Procurando por conexões em {IP}:{PORT}...')
 
 def receive_message(client_socket):
     try:
