@@ -10,7 +10,7 @@ class Square:
         self.color = color
         self.numberOfPieces = numberOfPieces
         self.screen = screen
-        self.font = pygame.font.SysFont('Corbel', 100)
+        self.font = pygame.font.SysFont(None, 100)
 
     def drawSquare(self):
         pygame.draw.circle(self.screen, self.color, self.centerPosition, 60)
@@ -40,13 +40,17 @@ class Square:
         else:
             return False
 
-def setPlayerPosition(screen, player, positionKallah, positionY, color):
+def setPlayerPosition(screen, positionKallah, positionY, color):
     positionX = 85
+    player = []
+
     for cont in range(6):
         player.append(Square(screen, (positionX + 145, positionY), color, 4))
         positionX += 145
 
     player.append(Square(screen, (positionKallah, 125), color))
+
+    return player
 
 def drawPlayer(player):
     for cont in range(6):
